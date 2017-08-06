@@ -99,3 +99,15 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# data files
+*.csv
+*.tsv
+*.xls
+*.xlsx
+
+#image files
+*.pdf
+*.png
+*.svg
+*.jpg
