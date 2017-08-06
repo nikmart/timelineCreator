@@ -3,6 +3,14 @@ Make a "broken" horizontal bar plot, i.e., one with gaps
 """
 import csv
 import matplotlib.pyplot as plt
+import sys
+
+if len(sys.argv) != 2:
+    print("Missing data file\nUsage: makeTimeline.py [datafile.csv]")
+    quit()
+else:
+    filename = sys.argv[1]
+
 # Say, "the default sans-serif font is ..."
 plt.rcParams['font.sans-serif'] = "Adobe Gothic Std"
 # Then, "ALWAYS use sans-serif fonts"
@@ -21,7 +29,7 @@ y = 12 # how tall is the plot
 
 time = 0
 
-with open('productiveCar.csv', 'rb') as csvfile:
+with open(filename, 'rb') as csvfile:
     timereader = csv.reader(csvfile, delimiter=',')
     for row in timereader:
         # skip the header row
