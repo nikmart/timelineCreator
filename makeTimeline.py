@@ -25,7 +25,7 @@ row_num = 0
 time_list = [] # list of the timeblocks to plot
 section_colors = [] # list of the colors for each block
 section_labels = [] # list of x,y,text for section labels
-y = 12 # how tall is the plot
+y = 4. # how tall is the plot
 
 time = 0
 
@@ -44,7 +44,7 @@ with open(filename, 'rb') as csvfile:
         row_num += 1
 
 fig, ax = plt.subplots()
-ax.broken_barh(time_list, (1, 10), facecolors = section_colors)
+ax.broken_barh(time_list, (1, y-2), facecolors = section_colors)
 ax.set_ylim(0, y)
 ax.set_xlim(-1, time+1)
 ax.set_xlabel('minutes')
